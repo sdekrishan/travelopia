@@ -21,13 +21,14 @@ Usage/Functionality of the Project -
  ## Screenshots
 
  Booking form/home page -
- trav1.png
+ ![trav1](https://github.com/sdekrishan/travelopia/assets/107391017/93977744-9cd5-48e6-8c60-9d283d409c69)
+
 
  Dashboard page -
- trav2.png
+![trav2](https://github.com/sdekrishan/travelopia/assets/107391017/5d08ca5b-fdd2-43de-a325-7b20d2db4bc5)
 
  404 Page -
- trav3.png
+ ![trav3](https://github.com/sdekrishan/travelopia/assets/107391017/466797e4-fe35-4de5-8d9b-e1ab5476dda9)
 
  ## Api Documentation
 
