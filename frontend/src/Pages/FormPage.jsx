@@ -69,6 +69,11 @@ const FormPage = () => {
       <Text fontFamily={"Dancing Script"} fontSize={"6xl"} fontWeight={"bold"}>
         Travelopia
       </Text>
+      <Box w='280px' lineHeight={'2'} height={'fit-content'} overflowY ={'scroll'} position={'absolute'} bottom={'120'} left='10' border='1px solid white' padding={'.4rem'} borderRadius={'.4rem'}>
+        <Text fontSize={'2xl'}>Who are we?</Text>
+      Travels expert Travelopia provides unique travel experiences. You can do whatever you want like yatching, wildlife safaris, polar expeditions and many more. In this app user can book the trip by filling a form and also can see other's people trips in the Dashboard.
+      So what are you waiting for Submit the form and start your journey
+      </Box>
       <Button
         data-testid="dashboard"
         colorScheme="twitter"
@@ -79,18 +84,7 @@ const FormPage = () => {
       >
         Dashboard
       </Button>
-      <Box
-        color="white"
-        fontFamily={"Dancing Script"}
-        marginInline={"auto"}
-        padding={".5rem .7rem"}
-        borderRadius={".3rem"}
-        bgColor={"red"}
-        w="fit-content"
-        fontSize={"2xl"}
-      >
-        Submit Form to Book your excited Journey !
-      </Box>
+     
       <form onSubmit={handleFormSubmit}>
         {loading ? (
           <Loader />
