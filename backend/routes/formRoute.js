@@ -24,9 +24,12 @@ formRouter.post("/",async(req, res) => {
 })
 
 formRouter.get("/",async(req, res) => {
+    const page = req.query.page || 1;
+    const limit = 5;
     try {
-        const allBookings = await FormModel.find();
-        res.status(201).send(allBookings)
+        const total = await FormModel.find()
+        const allBookings = await FormModel.find().skip((page-1)*limit).limit(limit).sort({ createdAt: -1 });
+        res.status(201).send({allBookings,total:total})
     } catch (error) {
         console.log(error.message);
         res.status(500).send(error.message)
