@@ -34,7 +34,7 @@ const FormPage = () => {
     event.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:8080/booking", form)
+      .post("https://travelopia-3psd.onrender.com/booking", form)
       .then((res) => {
         setLoading(false);
         return toast({

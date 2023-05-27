@@ -14,7 +14,7 @@ const Dashboard = () => {
     
     useEffect(()=>{
         setLoading(true)
-        axios.get(`http://localhost:8080/booking?page=1`)
+        axios.get(`https://travelopia-3psd.onrender.com?page=1`)
         .then(res => {
             console.log(res);
             setBookings(res.data.allBookings)
@@ -29,7 +29,7 @@ const Dashboard = () => {
     const getPagePosts = (p) => {
         setCurrentPage(p)
         setLoading(true)
-        axios.get(`http://localhost:8080/booking?page=${p}`)
+        axios.get(`https://travelopia-3psd.onrender.com?page=${p}`)
         .then(res => {
             setLoading(false)
             setBookings(res.data.allBookings)
@@ -39,7 +39,7 @@ const Dashboard = () => {
     }
     const downloadCSV =()=> {
         
-            fetch(`http://localhost:8080/booking?page=${currentPage}`) // Replace with your API endpoint
+            fetch(`https://travelopia-3psd.onrender.com?page=${currentPage}`) // Replace with your API endpoint
               .then(response => response.text())
               .then(csvData => {
                 const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
@@ -68,8 +68,7 @@ const Dashboard = () => {
     <Flex>        
         <Button colorScheme='whatsapp' onClick={()=>getPagePosts(currentPage)} rightIcon={<AiOutlineReload/>}>Reload</Button>
     </Flex>
-        {/* {bookings.length > 0 && !loading ?
-        <> */}
+       
          <Table>
             <Thead>
                 <Tr bgColor={'#BB86FC'} >
@@ -109,9 +108,7 @@ const Dashboard = () => {
             </Flex>
             <Box>Total Budget - {bookings.reduce((acc,el)=>el.budget+acc,0)}</Box>
         </Flex>
-        {/* </> 
-        :
-         <Loader/>} */}
+      
         
     </>
   )
