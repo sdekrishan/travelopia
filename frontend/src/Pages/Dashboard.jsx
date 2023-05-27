@@ -65,9 +65,7 @@ const Dashboard = () => {
   return (
     <>
       <Text fontFamily={'Dancing Script'} fontSize={'6xl'} fontWeight={'bold'}>Travelopia</Text>
-    <Flex>        
         <Button colorScheme='whatsapp' onClick={()=>getPagePosts(currentPage)} rightIcon={<AiOutlineReload/>}>Reload</Button>
-    </Flex>
        
          <Table>
             <Thead>

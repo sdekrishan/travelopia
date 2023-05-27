@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormControl, FormLabel } from "@chakra-ui/form-control";
+import { FormControl, FormHelperText, FormLabel } from "@chakra-ui/form-control";
 import axios from "axios";
 import {BiUser} from 'react-icons/bi'
 import {BsCurrencyDollar, BsEnvelope} from 'react-icons/bs'
@@ -48,7 +48,14 @@ const FormPage = () => {
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
+        return toast({
+            title: 'An Error Occured.',
+          description: "Something went wrong. Please try again after some time !",
+          status: 'error',
+          duration: 5000,
+          position:"top",
+          isClosable: true,
+        })
       });
   };
 
@@ -117,7 +124,6 @@ const FormPage = () => {
             name="totalTravellers"
             />
             </InputGroup>
-
           <FormLabel>Budget $</FormLabel>
           <InputGroup>
           <InputLeftElement>
@@ -128,11 +134,12 @@ const FormPage = () => {
             type="number"
             data-testid = 'budget'
             isRequired
-            placeholder="Amount will be calculated in dollars"
+            placeholder="Budget Per Person (in dollars $)"
             onChange={handleFormChange}
             />
             </InputGroup>
-
+            <FormHelperText color='white' border='1px solid white' w='fit-content' padding={'.3rem'} borderRadius={'5px'}>Net Budget {form.budget*form.totalTravellers}</FormHelperText>
+                
           <Input
             type="submit"
             value="Submit"

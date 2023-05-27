@@ -2,7 +2,7 @@ const { FormModel } = require("../model/formModel");
 
 const formRouter = require("express").Router();
 
-formRouter.post("/",async(req, res) => {
+formRouter.post("/booking",async(req, res) => {
     const {name, email, destination, budget, totalTravellers} = req.body;
 
     try {
@@ -23,7 +23,7 @@ formRouter.post("/",async(req, res) => {
     }
 })
 
-formRouter.get("/",async(req, res) => {
+formRouter.get("/booking",async(req, res) => {
     const page = req.query.page || 1;
     const limit = 5;
     try {

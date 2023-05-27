@@ -9,7 +9,7 @@ mongoose.set('strictQuery', false);
 app.use(express.json());
 app.use(cors({ origin: true }));
 
-app.use("/booking",formRouter)
+app.use("/",formRouter)
 
 const port = process.env.PORT || 5000
 
