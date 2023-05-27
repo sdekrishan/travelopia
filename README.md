@@ -42,10 +42,10 @@ You have to add a .env file in your Backend folder and add there MONGO_DB url wh
 
 ## Contact 
 
-You can reachme at [link](kk4064685@gmail.com) if you have any doubt.
+You can reachme at [mymail](kk4064685@gmail.com) if you have any doubt.
 
 ## Acknowledgements 
 
 freefrontend and uiverse helps me to create 404 page and loader component respectively.
 
-## Thankyou if you read it till here 😃
+## Thankyou if you read it till here 😃 You are awesome
