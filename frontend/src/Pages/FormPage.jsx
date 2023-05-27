@@ -34,7 +34,7 @@ const FormPage = () => {
     event.preventDefault();
     setLoading(true);
     axios
-      .post("http://localhost:8080/", form)
+      .post("http://localhost:8080/booking", form)
       .then((res) => {
         setLoading(false);
         return toast({

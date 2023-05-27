@@ -42,7 +42,7 @@ You have to add a .env file in your Backend folder and add there MONGO_DB url wh
 
 ## Contact 
 
-You can reachme at [link](kk4064685@gmail.com) if you have any doubt.
+You can reachme at [mymail](kk4064685@gmail.com) if you have any doubt.
 
 ## Acknowledgements 
 
