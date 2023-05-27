@@ -48,4 +48,4 @@ You can reachme at [mymail](kk4064685@gmail.com) if you have any doubt.
 
 freefrontend and uiverse helps me to create 404 page and loader component respectively.
 
-## Thankyou if you read it till here 😃
+## Thankyou if you read it till here 😃 You are awesome
