@@ -56,7 +56,7 @@ const FormPage = () => {
   return (
     <>
       <Text fontFamily={'Dancing Script'} fontSize={'6xl'} fontWeight={'bold'}>Travelopia</Text>
-    <Button colorScheme="twitter" onClick={()=>navigate("/dashboard")} position='absolute' top='10' right='10'>Dashboard</Button>
+    <Button data-testid='dashboard' colorScheme="twitter" onClick={()=>navigate("/dashboard")} position='absolute' top='10' right='10'>Dashboard</Button>
       <form onSubmit={handleFormSubmit}>
        {loading ? <Loader/>: <FormControl>
           <FormLabel>Name</FormLabel>
@@ -137,6 +137,7 @@ const FormPage = () => {
             type="submit"
             value="Submit"
             bgColor="#26cc00"
+            color='white'
             mt="1rem"
             w="30%"
           />
