@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/layout';
+import { Box, Flex, Heading, Text } from '@chakra-ui/layout';
 import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 import Loader from '../Components/Loader';
@@ -64,6 +64,7 @@ const Dashboard = () => {
       
   return (
     <>
+      <Text fontFamily={'Dancing Script'} fontSize={'6xl'} fontWeight={'bold'}>Travelopia</Text>
     <Flex>        
         <Button colorScheme='whatsapp' onClick={()=>getPagePosts(currentPage)} rightIcon={<AiOutlineReload/>}>Reload</Button>
     </Flex>
@@ -71,15 +72,15 @@ const Dashboard = () => {
         <> */}
          <Table>
             <Thead>
-                <Tr>
-                <Th>Booking Id</Th>
-                <Th>Booking Date</Th>
-                <Th>Booking Time</Th>
-                <Th>Name</Th>
-                <Th>Email</Th>
-                <Th>Destination</Th>
-                <Th>Total Travellers</Th>
-                <Th>Budget $</Th>
+                <Tr bgColor={'#BB86FC'} >
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Booking Id</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Booking Date</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Booking Time</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Name</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Email</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Destination</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Total Travellers</Th>
+                <Th color='black' fontSize={'sm'} border='1px solid black'>Budget $</Th>
                 </Tr>
             </Thead>
             <Tbody>
@@ -99,13 +100,14 @@ const Dashboard = () => {
         </Tr> }
         </Tbody>
         </Table>
-        <Flex  marginInline={'auto'} border='1px solid lightgrey' justifyContent={'space-between'}>
-            <Flex alignItems={'center'}>
-            <Button isDisabled={currentPage === 1} onClick={()=>getPagePosts(currentPage-1)}>Prev</Button>
+        <Flex alignItems={'center'} marginInline={'auto'} border='1px solid lightgrey' justifyContent={'space-between'} padding='.5rem 1rem'>
+            <Button  colorScheme='orange'  onClick={downloadCSV}>Download CSV</Button>
+            <Flex alignItems={'center'} gap='1rem'>
+            <Button size={'sm'} colorScheme='orange' isDisabled={currentPage === 1} onClick={()=>getPagePosts(currentPage-1)}>Prev</Button>
             <Text>{currentPage}/{Math.ceil(totalBooking.length/5)}</Text>
-            <Button onClick={()=>getPagePosts(currentPage+1)} isDisabled={currentPage === Math.ceil(totalBooking.length/5)}>Next</Button>
+            <Button size={'sm'} colorScheme='orange'  onClick={()=>getPagePosts(currentPage+1)} isDisabled={currentPage === Math.ceil(totalBooking.length/5)}>Next</Button>
             </Flex>
-            <Button onClick={downloadCSV}>Download CSV</Button>
+            <Box>Total Budget - {bookings.reduce((acc,el)=>el.budget+acc,0)}</Box>
         </Flex>
         {/* </> 
         :

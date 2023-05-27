@@ -28,7 +28,7 @@ formRouter.get("/",async(req, res) => {
     const limit = 5;
     try {
         const total = await FormModel.find()
-        const allBookings = await FormModel.find().skip((page-1)*limit).limit(limit);
+        const allBookings = await FormModel.find().skip((page-1)*limit).limit(limit).sort({ createdAt: -1 });
         res.status(201).send({allBookings,total:total})
     } catch (error) {
         console.log(error.message);

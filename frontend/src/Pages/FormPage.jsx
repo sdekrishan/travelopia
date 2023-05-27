@@ -10,6 +10,8 @@ import { Select } from "@chakra-ui/select";
 import Loader from "../Components/Loader";
 import { Button } from "@chakra-ui/button";
 import { useNavigate } from "react-router";
+import { Text } from "@chakra-ui/layout";
+import { useToast } from "@chakra-ui/toast";
 
 const FormPage = () => {
   const [form, setForm] = useState({
@@ -19,12 +21,12 @@ const FormPage = () => {
     totalTravellers: 1,
     budget: 500,
   });
-  const navigate = useNavigate()
+  const toast = useToast();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleFormChange = (event) => {
     const { name, value } = event.target;
-
     setForm({ ...form, [name]: value });
   };
 
@@ -35,7 +37,14 @@ const FormPage = () => {
       .post("http://localhost:8080/", form)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        return toast({
+            title: 'Booking Successfull.',
+          description: "Go to Dashboard to see all Bookings.",
+          status: 'success',
+          duration: 5000,
+          position:"top",
+          isClosable: true,
+        })
       })
       .catch((err) => {
         setLoading(false);
@@ -46,7 +55,8 @@ const FormPage = () => {
  
   return (
     <>
-    <Button onClick={()=>navigate("/dashboard")}>Dashboard</Button>
+      <Text fontFamily={'Dancing Script'} fontSize={'6xl'} fontWeight={'bold'}>Travelopia</Text>
+    <Button colorScheme="twitter" onClick={()=>navigate("/dashboard")} position='absolute' top='10' right='10'>Dashboard</Button>
       <form onSubmit={handleFormSubmit}>
        {loading ? <Loader/>: <FormControl>
           <FormLabel>Name</FormLabel>
@@ -57,6 +67,7 @@ const FormPage = () => {
           <Input
             name="name"
             type="text"
+            data-testid='name'
             isRequired
             placeholder="Enter your name"
             onChange={handleFormChange}
@@ -72,6 +83,8 @@ const FormPage = () => {
             type="email"
             name="email"
             isRequired
+            placeholder="Enter your Email"
+            data-testid='email'
             onChange={handleFormChange}
             />
             </InputGroup>
@@ -80,6 +93,8 @@ const FormPage = () => {
           
               <Select
             placeholder="Select Destination"
+            data-testid='destination'
+            
             onChange={handleFormChange}
             name="destination"
             >
@@ -95,7 +110,9 @@ const FormPage = () => {
           </InputLeftElement>
           <Input
             type="number"
+            data-testid='totalTravellers'
             isRequired
+            placeholder="Total Travellers"
             onChange={handleFormChange}
             name="totalTravellers"
             />
@@ -109,6 +126,7 @@ const FormPage = () => {
           <Input
             name="budget"
             type="number"
+            data-testid = 'budget'
             isRequired
             placeholder="Amount will be calculated in dollars"
             onChange={handleFormChange}
@@ -117,8 +135,8 @@ const FormPage = () => {
 
           <Input
             type="submit"
-            value="submit"
-            bgColor="lightGreen"
+            value="Submit"
+            bgColor="#26cc00"
             mt="1rem"
             w="30%"
           />

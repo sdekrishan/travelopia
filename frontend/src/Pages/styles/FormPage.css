@@ -1,8 +1,7 @@
 form{
-    width: 40vw;
+    width: 35vw;
     height: fit-content;
     position: fixed;
-    border:1px solid lightgray;
     border-radius: .5rem;
     border-right:5px solid grey;
     border-bottom:5px solid grey;
@@ -10,4 +9,7 @@ form{
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+}
+option{
+    color:black
 }

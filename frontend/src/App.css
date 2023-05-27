@@ -1,5 +1,12 @@
 .App {
   text-align: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  color:white;
+  padding-top: 1rem;
+  background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+
 }
 
 .App-logo {
