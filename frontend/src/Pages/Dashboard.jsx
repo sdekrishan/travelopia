@@ -14,7 +14,7 @@ const Dashboard = () => {
     
     useEffect(()=>{
         setLoading(true)
-        axios.get(`https://travelopia-3psd.onrender.com?page=1`)
+        axios.get(`https://travelopia-3psd.onrender.com/booking?page=1`)
         .then(res => {
             console.log(res);
             setBookings(res.data.allBookings)
@@ -29,7 +29,7 @@ const Dashboard = () => {
     const getPagePosts = (p) => {
         setCurrentPage(p)
         setLoading(true)
-        axios.get(`https://travelopia-3psd.onrender.com?page=${p}`)
+        axios.get(`https://travelopia-3psd.onrender.com/booking?page=${p}`)
         .then(res => {
             setLoading(false)
             setBookings(res.data.allBookings)
@@ -39,7 +39,7 @@ const Dashboard = () => {
     }
     const downloadCSV =()=> {
         
-            fetch(`https://travelopia-3psd.onrender.com?page=${currentPage}`) // Replace with your API endpoint
+            fetch(`https://travelopia-3psd.onrender.com/booking?page=${currentPage}`) // Replace with your API endpoint
               .then(response => response.text())
               .then(csvData => {
                 const blob = new Blob([csvData], { type: 'text/csv;charset=utf-8' });
