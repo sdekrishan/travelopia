@@ -23,7 +23,7 @@ const FormPage = () => {
     email: "",
     destination: "",
     totalTravellers: 1,
-    budget: 500,
+    budget: 0,
   });
   const toast = useToast();
   const navigate = useNavigate();
