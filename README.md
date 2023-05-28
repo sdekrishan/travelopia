@@ -5,10 +5,10 @@ Travels expert Travelopia provides unique travel experiences. You can do whateve
 ## Installation
 
 ### Backend 
-You can start the project by installing all the dependencies using npm install or npm i. But you have to use your own mongodb database. So you have to create/maintain a database.
+You can start the project by installing all the dependencies using npm install or npm i. But you have to use your own mongodb database. So you have to create/maintain a database. Backend Link [backend](https://travelopia-3psd.onrender.com/)
 
 ### Frontend
-You can start your frontend part by installing all dependenices using npm install.
+You can start your frontend part by installing all dependenices using npm install. [frontend](https://travelopia-blush.vercel.app/)
 
 ## Usage
 
